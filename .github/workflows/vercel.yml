@@ -1,0 +1,15 @@
+name: Vercel Deployment Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm install -g vercel
+      - run: vercel --prod --yes --token=hqdNUbEN5gqYTc1Uqre9ydkB
